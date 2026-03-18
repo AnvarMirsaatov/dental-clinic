@@ -1,57 +1,59 @@
 import { Sparkles, Shield, Smile, Zap, Heart, Star } from 'lucide-react';
-
-const services = [
-  {
-    icon: Sparkles,
-    title: 'Teeth Whitening',
-    description: 'Professional whitening treatments for a brighter, more confident smile.',
-    color: 'from-blue-500 to-cyan-400',
-  },
-  {
-    icon: Shield,
-    title: 'Dental Implants',
-    description: 'Permanent solution for missing teeth with natural-looking results.',
-    color: 'from-purple-500 to-pink-400',
-  },
-  {
-    icon: Smile,
-    title: 'Cosmetic Dentistry',
-    description: 'Transform your smile with veneers, bonding, and smile makeovers.',
-    color: 'from-orange-500 to-yellow-400',
-  },
-  {
-    icon: Zap,
-    title: 'Emergency Care',
-    description: '24/7 emergency dental services for urgent care when you need it most.',
-    color: 'from-red-500 to-orange-400',
-  },
-  {
-    icon: Heart,
-    title: 'Preventive Care',
-    description: 'Regular checkups, cleanings, and preventive treatments for optimal health.',
-    color: 'from-green-500 to-emerald-400',
-  },
-  {
-    icon: Star,
-    title: 'Orthodontics',
-    description: 'Braces and Invisalign treatments to straighten your teeth perfectly.',
-    color: 'from-indigo-500 to-blue-400',
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 export function Services() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      icon: Sparkles,
+      title: t('services.whitening'),
+      description: t('services.whitening.desc'),
+      color: 'from-blue-500 to-cyan-400',
+    },
+    {
+      icon: Shield,
+      title: t('services.implants'),
+      description: t('services.implants.desc'),
+      color: 'from-purple-500 to-pink-400',
+    },
+    {
+      icon: Smile,
+      title: t('services.cosmetic'),
+      description: t('services.cosmetic.desc'),
+      color: 'from-orange-500 to-yellow-400',
+    },
+    {
+      icon: Zap,
+      title: t('services.emergency'),
+      description: t('services.emergency.desc'),
+      color: 'from-red-500 to-orange-400',
+    },
+    {
+      icon: Heart,
+      title: t('services.preventive'),
+      description: t('services.preventive.desc'),
+      color: 'from-green-500 to-emerald-400',
+    },
+    {
+      icon: Star,
+      title: t('services.orthodontics'),
+      description: t('services.orthodontics.desc'),
+      color: 'from-indigo-500 to-blue-400',
+    },
+  ];
+
   return (
     <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">Our Services</span>
+          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">{t('services.badge')}</span>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-4">
-            Comprehensive Dental Care
+            {t('services.title')}
           </h2>
           <p className="text-xl text-gray-600">
-            From routine checkups to advanced procedures, we offer a full range of dental services 
-            to keep your smile healthy and beautiful.
+            {t('services.description')}
           </p>
         </div>
 
@@ -78,7 +80,7 @@ export function Services() {
                 
                 <div className="mt-6">
                   <a href="#contact" className="text-blue-600 font-medium inline-flex items-center gap-2 group-hover:gap-3 transition-all">
-                    Learn More
+                    {t('services.learnMore')}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

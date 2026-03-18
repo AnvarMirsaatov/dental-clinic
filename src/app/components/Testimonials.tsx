@@ -1,44 +1,45 @@
 import { Star, Quote } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
-const testimonials = [
+const getTestimonials = (t: (key: string) => string) => [
   {
     name: 'Sarah Johnson',
-    role: 'Patient since 2020',
+    role: `${t('testimonials.since')} 2020`,
     content: 'The team at SmileCare is absolutely amazing! They made me feel comfortable throughout my entire treatment. My smile has never looked better!',
     rating: 5,
     avatar: 'SJ',
   },
   {
     name: 'Michael Chen',
-    role: 'Patient since 2019',
+    role: `${t('testimonials.since')} 2019`,
     content: 'I was always afraid of going to the dentist, but SmileCare changed that completely. They are gentle, professional, and truly care about their patients.',
     rating: 5,
     avatar: 'MC',
   },
   {
     name: 'Emily Rodriguez',
-    role: 'Patient since 2021',
+    role: `${t('testimonials.since')} 2021`,
     content: 'From the front desk to the dentist chair, everyone here is top-notch. The office is modern, clean, and the technology they use is impressive.',
     rating: 5,
     avatar: 'ER',
   },
   {
     name: 'David Thompson',
-    role: 'Patient since 2018',
+    role: `${t('testimonials.since')} 2018`,
     content: 'Best dental experience I have ever had. The staff is friendly, the service is excellent, and they always work with my schedule. Highly recommend!',
     rating: 5,
     avatar: 'DT',
   },
   {
     name: 'Lisa Anderson',
-    role: 'Patient since 2022',
+    role: `${t('testimonials.since')} 2022`,
     content: 'My kids actually look forward to their dental appointments now! The team is wonderful with children and makes every visit fun and educational.',
     rating: 5,
     avatar: 'LA',
   },
   {
     name: 'James Wilson',
-    role: 'Patient since 2017',
+    role: `${t('testimonials.since')} 2017`,
     content: 'After years of dental issues, SmileCare helped restore my confidence. Their expertise in cosmetic dentistry is unmatched. Thank you!',
     rating: 5,
     avatar: 'JW',
@@ -46,17 +47,20 @@ const testimonials = [
 ];
 
 export function Testimonials() {
+  const { t } = useLanguage();
+  const testimonials = getTestimonials(t);
+
   return (
     <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">Testimonials</span>
+          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">{t('testimonials.badge')}</span>
           <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-4">
-            What Our Patients Say
+            {t('testimonials.title')}
           </h2>
           <p className="text-xl text-gray-600">
-            Don't just take our word for it. Hear from our satisfied patients who trust us with their smiles.
+            {t('testimonials.description')}
           </p>
         </div>
 

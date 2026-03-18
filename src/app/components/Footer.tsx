@@ -1,6 +1,9 @@
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -16,7 +19,7 @@ export function Footer() {
               <span className="text-2xl font-semibold text-white">SmileCare</span>
             </div>
             <p className="text-gray-400 mb-4">
-              Providing exceptional dental care with compassion and expertise since 2008.
+              {t('footer.description')}
             </p>
             <div className="flex gap-3">
               <a href="#" className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
@@ -36,31 +39,31 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-white font-semibold mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2">
-              <li><a href="#home" className="hover:text-blue-400 transition-colors">Home</a></li>
-              <li><a href="#services" className="hover:text-blue-400 transition-colors">Services</a></li>
-              <li><a href="#about" className="hover:text-blue-400 transition-colors">About Us</a></li>
-              <li><a href="#testimonials" className="hover:text-blue-400 transition-colors">Testimonials</a></li>
-              <li><a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a></li>
+              <li><a href="#home" className="hover:text-blue-400 transition-colors">{t('nav.home')}</a></li>
+              <li><a href="#services" className="hover:text-blue-400 transition-colors">{t('nav.services')}</a></li>
+              <li><a href="#about" className="hover:text-blue-400 transition-colors">{t('nav.about')}</a></li>
+              <li><a href="#testimonials" className="hover:text-blue-400 transition-colors">{t('nav.testimonials')}</a></li>
+              <li><a href="#contact" className="hover:text-blue-400 transition-colors">{t('nav.contact')}</a></li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Our Services</h4>
+            <h4 className="text-white font-semibold mb-4">{t('footer.ourServices')}</h4>
             <ul className="space-y-2">
-              <li><a href="#services" className="hover:text-blue-400 transition-colors">Teeth Whitening</a></li>
-              <li><a href="#services" className="hover:text-blue-400 transition-colors">Dental Implants</a></li>
-              <li><a href="#services" className="hover:text-blue-400 transition-colors">Cosmetic Dentistry</a></li>
-              <li><a href="#services" className="hover:text-blue-400 transition-colors">Emergency Care</a></li>
-              <li><a href="#services" className="hover:text-blue-400 transition-colors">Orthodontics</a></li>
+              <li><a href="#services" className="hover:text-blue-400 transition-colors">{t('services.whitening')}</a></li>
+              <li><a href="#services" className="hover:text-blue-400 transition-colors">{t('services.implants')}</a></li>
+              <li><a href="#services" className="hover:text-blue-400 transition-colors">{t('services.cosmetic')}</a></li>
+              <li><a href="#services" className="hover:text-blue-400 transition-colors">{t('services.emergency')}</a></li>
+              <li><a href="#services" className="hover:text-blue-400 transition-colors">{t('services.orthodontics')}</a></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Contact Info</h4>
+            <h4 className="text-white font-semibold mb-4">{t('footer.contactInfo')}</h4>
             <ul className="space-y-3">
               <li className="text-gray-400">
                 123 Dental Street, Suite 100<br />
@@ -82,7 +85,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>&copy; 2026 SmileCare Dental Clinic. All rights reserved.</p>
+          <p>&copy; 2026 {t('footer.rights')}</p>
         </div>
       </div>
     </footer>

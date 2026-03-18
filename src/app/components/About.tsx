@@ -1,25 +1,28 @@
 import { CheckCircle, Users, Microscope, HeartPulse } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-
-const features = [
-  {
-    icon: Users,
-    title: 'Experienced Team',
-    description: 'Board-certified dentists with years of expertise',
-  },
-  {
-    icon: Microscope,
-    title: 'Advanced Technology',
-    description: 'State-of-the-art equipment for precise treatments',
-  },
-  {
-    icon: HeartPulse,
-    title: 'Patient-Centered Care',
-    description: 'Personalized treatment plans for every patient',
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 export function About() {
+  const { t } = useLanguage();
+
+  const features = [
+    {
+      icon: Users,
+      title: t('about.feature1'),
+      description: t('about.feature1.desc'),
+    },
+    {
+      icon: Microscope,
+      title: t('about.feature2'),
+      description: t('about.feature2.desc'),
+    },
+    {
+      icon: HeartPulse,
+      title: t('about.feature3'),
+      description: t('about.feature3.desc'),
+    },
+  ];
+
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="max-w-7xl mx-auto">
@@ -57,22 +60,18 @@ export function About() {
 
           {/* Right Content */}
           <div className="space-y-6 order-1 lg:order-2">
-            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">About Us</span>
+            <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide">{t('about.badge')}</span>
             
             <h2 className="text-4xl lg:text-5xl font-bold text-gray-900">
-              Excellence in Dental Care Since 2008
+              {t('about.title')}
             </h2>
             
             <p className="text-lg text-gray-600 leading-relaxed">
-              At SmileCare, we believe everyone deserves a healthy, beautiful smile. Our team of 
-              experienced dental professionals is committed to providing exceptional care in a 
-              comfortable, welcoming environment.
+              {t('about.desc1')}
             </p>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              We stay at the forefront of dental technology and techniques to ensure you receive 
-              the most effective, efficient treatments available. Your comfort and satisfaction 
-              are our top priorities.
+              {t('about.desc2')}
             </p>
 
             {/* Features */}
@@ -95,7 +94,7 @@ export function About() {
 
             <div className="pt-4">
               <button className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-3 rounded-full hover:shadow-lg hover:scale-105 transition-all">
-                Meet Our Team
+                {t('about.team')}
               </button>
             </div>
           </div>
