@@ -37,7 +37,7 @@ export function Header() {
             <LanguageSwitcher />
             <a href="tel:+1234567890" className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors">
               <Phone className="w-4 h-4" />
-              <span>(123) 456-7890</span>
+              <span>+998 94 6053939</span>
             </a>
             <button className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2.5 rounded-full hover:shadow-lg hover:scale-105 transition-all">
               {t('nav.book')}
@@ -71,7 +71,7 @@ export function Header() {
               </div>
               <a href="tel:+1234567890" className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors py-2">
                 <Phone className="w-4 h-4" />
-                <span>(123) 456-7890</span>
+                <span>+998 94 6053939</span>
               </a>
               <button className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-2.5 rounded-full hover:shadow-lg transition-all w-full">
                 {t('nav.book')}
